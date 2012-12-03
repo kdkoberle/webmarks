@@ -3,6 +3,10 @@ class WebmarksController < ApplicationController
   # GET /webmarks.json
   
   def home
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @webmarks }
+    end
   end
   
   def view
