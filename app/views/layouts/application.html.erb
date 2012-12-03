@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Webmarks</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title><%= yield(:title) %></title>
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="wrapper">
+	<div id="header-wrapper" class="container">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><%= link_to "Webmarks", root_path %></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Add", add_path %></li>
+				<li><%= link_to "Explore", view_path %></li>
+			</ul>
+		</div>
+	</div>
+	<div><%= link_to image_tag("img03.png", alt: "") %></div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="content">
+			<div class="post">
+				<h2 class="title"><%= yield(:page_header) %></h2>
+				<div style="clear: both;">&nbsp;</div>
+				<div class="entry">
+				  <%= yield %>
+				</div>
+			</div>
+			<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+			    <li>
+				<h2>Webmarks</h2>
+				<ul>
+				    <li><%= link_to "Add", add_path %></li>
+                                    <li><%= link_to "View", view_path %></li>
+				</ul>
+			    </li>
+				
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<div class="container"><%= link_to image_tag("img03.png", alt: "") %></div>
+	<!-- end #page -->
+</div>
+<div id="footer-content"></div>
+<div id="footer">
+	<p>Design by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
+</div>
+<!-- end #footer -->
 </body>
 </html>
+
+

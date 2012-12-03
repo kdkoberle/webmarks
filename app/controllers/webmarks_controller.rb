@@ -1,7 +1,11 @@
 class WebmarksController < ApplicationController
   # GET /webmarks
   # GET /webmarks.json
-  def index
+  
+  def home
+  end
+  
+  def view
     @webmarks = Webmark.all
 
     respond_to do |format|
