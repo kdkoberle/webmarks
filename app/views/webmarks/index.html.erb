@@ -1,0 +1,27 @@
+<h1>Listing webmarks</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Name</th>
+    <th>Date saved</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @webmarks.each do |webmark| %>
+  <tr>
+    <td><%= webmark.url %></td>
+    <td><%= webmark.name %></td>
+    <td><%= webmark.date_saved %></td>
+    <td><%= link_to 'Show', webmark %></td>
+    <td><%= link_to 'Edit', edit_webmark_path(webmark) %></td>
+    <td><%= link_to 'Destroy', webmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Webmark', new_webmark_path %>

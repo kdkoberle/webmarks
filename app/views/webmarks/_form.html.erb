@@ -1,0 +1,29 @@
+<%= form_for(@webmark) do |f| %>
+  <% if @webmark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@webmark.errors.count, "error") %> prohibited this webmark from being saved:</h2>
+
+      <ul>
+      <% @webmark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date_saved %><br />
+    <%= f.text_field :date_saved %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
