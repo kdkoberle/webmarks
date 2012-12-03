@@ -4,8 +4,8 @@ class WebmarksController < ApplicationController
   
   def home
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @webmarks }
+    format.html # index.html.erb
+    format.json { render json: @webmarks }
     end
   end
   
@@ -61,21 +61,6 @@ class WebmarksController < ApplicationController
     end
   end
 
-  # PUT /webmarks/1
-  # PUT /webmarks/1.json
-  def update
-    @webmark = Webmark.find(params[:id])
-
-    respond_to do |format|
-      if @webmark.update_attributes(params[:webmark])
-        format.html { redirect_to @webmark, notice: 'Webmark was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @webmark.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # DELETE /webmarks/1
   # DELETE /webmarks/1.json

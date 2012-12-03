@@ -5,6 +5,5 @@ Webmarks::Application.routes.draw do
   
   match '/add', to: 'webmarks#new'
   match '/view', to: 'webmarks#view'
-  match '/test', to: 'webmarks#index'
 
 end
